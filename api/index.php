@@ -30,9 +30,9 @@ $pg = ltrim($pg, '/');
         $caminhoArquivo = __DIR__ . '/../aulas/' . $nomeArquivo;
 
         // Executa o include se o arquivo existir
-        if (file_exists($caminhoArquivo)) {
+        if (!empty($pg) && file_exists($caminhoArquivo)) {
             include $caminhoArquivo;
-        } else {
+        } else if(!file_exists($caminhoArquivo)){
             http_response_code(404);
             echo "<h3>Erro 404: O arquivo '{$nomeArquivo}' não foi encontrado em /aulas/</h3>";
         }
