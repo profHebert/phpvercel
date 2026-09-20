@@ -17,6 +17,7 @@ $pg = $_GET['pg'] ?? "";
     </ul>
     <hr>
     <?php
+        echo"<p>Página: $pg</p>";
         if($pg!==""){
             include "aulas/$pg";
         }
