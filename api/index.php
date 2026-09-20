@@ -23,10 +23,7 @@ $pg = ltrim($pg, '/');
     <hr>
     <?php
         echo"<p>Página: $pg</p>";
-        if($pg!==""){
-            __DIR__include __DIR__ . '/../aulas/$pg';
-            
-        }
+        
         $nomeArquivo = basename($pg);
 
         // Monta o caminho absoluto para a pasta /aulas
