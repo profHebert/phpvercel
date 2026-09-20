@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-$nota = 8.5;
+// $nota = 8.5;
+$nota = $_GET['nota'] ?? 6.0;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,7 +16,7 @@ $nota = 8.5;
     <p>
         Resultado: 
         <?php if ($nota >= 7): ?>
-            <strong style="color: green;">Aprovado</strong>
+            <strong style="color: blue;">Aprovado</strong>
         <?php else: ?>
             <strong style="color: red;">Reprovado</strong>
         <?php endif; ?>
