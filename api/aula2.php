@@ -15,7 +15,7 @@ $nota = $_GET['nota'] ?? 6.0;
     <p>Nota do aluno: <?php echo $nota; ?></p>
     <p>
         Resultado: 
-        <?php if ($nota >= 7): ?>
+        <?php if ($nota >= 6): ?>
             <strong style="color: blue;">Aprovado</strong>
         <?php else: ?>
             <strong style="color: red;">Reprovado</strong>
