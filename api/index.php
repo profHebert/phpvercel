@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+$pg = $_GET['pg'] ?? "";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,5 +15,11 @@ header('Content-Type: text/html; charset=utf-8');
         <li><a href="/aula1.php">aula1.php - Variáveis</a></li>
         <li><a href="/aula2.php">aula2.php - Estruturas Condicionais</a></li>
     </ul>
+    <hr>
+    <?php
+        if($pg!==""){
+            include "aulas/$pg";
+        }
+    ?>
 </body>
 </html>
