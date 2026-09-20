@@ -19,7 +19,7 @@ $pg = $_GET['pg'] ?? "";
     <?php
         echo"<p>Página: $pg</p>";
         if($pg!==""){
-            include "aulas/$pg";
+            include "../aulas/$pg";
         }
     ?>
 </body>
