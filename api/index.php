@@ -20,9 +20,8 @@ $pg = ltrim($pg, '/');
         <li><a href="/aula1.php">aula1.php - Variáveis</a></li>
         <li><a href="/aula2.php">aula2.php - Estruturas Condicionais</a></li>
     </ul>
-    <hr>
     <?php
-        echo"<p>Página: $pg</p>";
+        
         
         $nomeArquivo = basename($pg);
 
@@ -31,6 +30,7 @@ $pg = ltrim($pg, '/');
 
         // Executa o include se o arquivo existir
         if (!empty($pg) && file_exists($caminhoArquivo)) {
+            echo"<hr><h2>Página: $pg</h2>";
             include $caminhoArquivo;
         } else if(!file_exists($caminhoArquivo)){
             http_response_code(404);
