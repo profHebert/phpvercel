@@ -1,6 +1,11 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+
 $pg = $_GET['pg'] ?? "";
+
+// Remove a barra inicial se existir (ex: /pg1.php -> pg1.php)
+$pg = ltrim($pg, '/');
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,7 +24,20 @@ $pg = $_GET['pg'] ?? "";
     <?php
         echo"<p>Página: $pg</p>";
         if($pg!==""){
-            include "../aulas/$pg";
+            __DIR__include __DIR__ . '/../aulas/$pg';
+            
+        }
+        $nomeArquivo = basename($pg);
+
+        // Monta o caminho absoluto para a pasta /aulas
+        $caminhoArquivo = __DIR__ . '/../aulas/' . $nomeArquivo;
+
+        // Executa o include se o arquivo existir
+        if (file_exists($caminhoArquivo)) {
+            include $caminhoArquivo;
+        } else {
+            http_response_code(404);
+            echo "<h3>Erro 404: O arquivo '{$nomeArquivo}' não foi encontrado em /aulas/</h3>";
         }
     ?>
 </body>
